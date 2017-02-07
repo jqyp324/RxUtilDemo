@@ -1,1 +1,2 @@
 #RxUtilDemo
+//使用内部封装的线程池进行耗时任务Toast.makeText(this, "IO线程进行耗时操作,请在控制台查看Log", Toast.LENGTH_SHORT).show();String str = "模拟IO线程执行耗时操作";RxjavaUtil.doInIOThread(new IOTask<String>(str) {    @Override    public void doInIOThread() {        for (int i = 0; i < 5; i++) {            try {                Thread.sleep(1000);            } catch (InterruptedException e) {                e.printStackTrace();            }            Log.v("test", getT());        }    }});
